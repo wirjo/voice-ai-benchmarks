@@ -387,9 +387,7 @@ export default function Home() {
                   kwindla/aiewf-eval
                 </a>
               </p>
-              <p className="text-xs text-gray-400">
-                Updated daily via GitHub Actions • Open source
-              </p>
+
             </div>
           </div>
         </footer>
