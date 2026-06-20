@@ -52,8 +52,8 @@ function ProviderIcon({ name, type = 'stt' }) {
 }
 
 function SortArrow({ direction }) {
-  if (!direction) return <span className="text-gray-300 ml-1">↕</span>;
-  return <span className="ml-1 text-blue-600">{direction === 'asc' ? '↑' : '↓'}</span>;
+  if (!direction) return <span className="text-gray-400 ml-1 text-xs">⇅</span>;
+  return <span className="ml-1 text-blue-600 text-xs">{direction === 'asc' ? '▲' : '▼'}</span>;
 }
 
 function parseNumeric(val) {
@@ -308,13 +308,11 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             {tab === 'stt' && (
               <div className="space-y-6">
-                <div className="bg-blue-50 border border-blue-100 rounded-xl p-5">
-                  <p className="text-sm text-blue-800">
-                    <strong>STT Performance:</strong> Benchmarked on 1,000 samples from pipecat-ai/smart-turn-data-v3.1-train. 
-                    Lower WER (Word Error Rate) and TTFS (Time To Final Segment) values indicate better performance. 
-                    🏆 = Best in category.
-                  </p>
-                </div>
+                <p className="text-sm text-gray-500 leading-relaxed">
+                  Benchmarked on 1,000 samples from pipecat-ai/smart-turn-data-v3.1-train. 
+                  Lower WER (Word Error Rate) and TTFS (Time To Final Segment) is better. 
+                  🏆 = Best in category.
+                </p>
                 <DataTable
                   columns={sttColumns}
                   data={sttData}
@@ -325,13 +323,11 @@ export default function Home() {
             )}
             {tab === 'llm' && (
               <div className="space-y-6">
-                <div className="bg-purple-50 border border-purple-100 rounded-xl p-5">
-                  <p className="text-sm text-purple-800">
-                    <strong>LLM Voice Agent Evaluation:</strong> Multi-turn conversation benchmark (aiwf_medium_context). 
-                    Higher pass rates indicate better conversation handling. Lower TTFT (Time To First Token) means faster response. 
-                    🏆 = Best performer.
-                  </p>
-                </div>
+                <p className="text-sm text-gray-500 leading-relaxed">
+                  Multi-turn conversation benchmark (aiwf_medium_context). 
+                  Higher pass rates indicate better conversation handling. Lower TTFT (Time To First Token) is faster. 
+                  🏆 = Best performer.
+                </p>
                 <DataTable
                   columns={llmColumns}
                   data={llmData}
@@ -348,18 +344,18 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             {/* Logos */}
             <div className="flex items-center justify-center gap-10 mb-8">
-              <a href="https://pipecat.ai" target="_blank" rel="noopener" className="opacity-80 hover:opacity-100 transition-opacity">
+              <a href="https://pipecat.ai" target="_blank" rel="noopener" className="opacity-70 hover:opacity-100 transition-opacity">
                 <img 
-                  src="/voice-ai-benchmarks/pipecat-avatar.png" 
+                  src="/voice-ai-benchmarks/pipecat-logo.png" 
                   alt="Pipecat" 
                   className="h-10 w-10 rounded-lg"
                 />
               </a>
-              <a href="https://aws.amazon.com" target="_blank" rel="noopener" className="opacity-80 hover:opacity-100 transition-opacity">
+              <a href="https://aws.amazon.com" target="_blank" rel="noopener" className="opacity-70 hover:opacity-100 transition-opacity">
                 <img 
-                  src="/voice-ai-benchmarks/aws-logo.svg" 
+                  src="/voice-ai-benchmarks/aws-official.png" 
                   alt="AWS" 
-                  className="h-8"
+                  className="h-10 rounded"
                 />
               </a>
             </div>
