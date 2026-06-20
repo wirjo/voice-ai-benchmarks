@@ -359,9 +359,9 @@ export default function Home() {
               </a>
               <a href="https://aws.amazon.com" target="_blank" rel="noopener" className="opacity-70 hover:opacity-100 transition-opacity">
                 <img 
-                  src="/voice-ai-benchmarks/aws-official.png" 
+                  src="/voice-ai-benchmarks/aws-logo-dark.svg" 
                   alt="AWS" 
-                  className="h-10 rounded"
+                  className="h-10"
                 />
               </a>
             </div>
