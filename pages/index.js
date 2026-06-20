@@ -274,8 +274,7 @@ export default function Home() {
         {/* Stats Bar */}
         <div className="bg-gray-50 border-b border-gray-200 px-6 py-5">
           <div className="max-w-7xl mx-auto flex flex-wrap gap-3">
-            <StatCard icon="🟢" value="Live Data" label="From upstream repos" />
-            <StatCard icon="🔄" value="Updated Daily" label="GitHub Actions" />
+            <StatCard icon="🔄" value="Updated Daily" label="From upstream repos" />
             <StatCard icon="🎤" value={`${sttData.length} Providers`} label="STT Services" />
             <StatCard icon="🧠" value={`${llmData.length} Models`} label="LLM Evaluation" />
           </div>
