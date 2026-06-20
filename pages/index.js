@@ -53,7 +53,7 @@ function ProviderIcon({ name, type = 'stt' }) {
 
 function SortArrow({ direction }) {
   if (!direction) return <span className="text-gray-400 ml-1 text-xs">⇅</span>;
-  return <span className="ml-1 text-blue-600 text-xs">{direction === 'asc' ? '▲' : '▼'}</span>;
+  return <span className="ml-1 text-gray-900 text-xs">{direction === 'asc' ? '▲' : '▼'}</span>;
 }
 
 function parseNumeric(val) {
@@ -289,7 +289,7 @@ export default function Home() {
                 onClick={() => setTab('stt')}
                 className={`px-6 py-4 text-sm font-medium border-b-2 transition-all duration-200 ${
                   tab === 'stt'
-                    ? 'border-blue-500 text-blue-600'
+                    ? 'border-gray-900 text-gray-900'
                     : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                 }`}
               >
@@ -299,7 +299,7 @@ export default function Home() {
                 onClick={() => setTab('llm')}
                 className={`px-6 py-4 text-sm font-medium border-b-2 transition-all duration-200 ${
                   tab === 'llm'
-                    ? 'border-blue-500 text-blue-600'
+                    ? 'border-gray-900 text-gray-900'
                     : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                 }`}
               >
@@ -369,7 +369,7 @@ export default function Home() {
             {/* Made with love */}
             <div className="text-center mb-6">
               <p className="text-base text-gray-700">
-                Made with ❤️ for the <a href="https://pipecat.ai" target="_blank" rel="noopener" className="font-semibold text-indigo-600 hover:text-indigo-700">Pipecat</a> community
+                Made with ❤️ for the <a href="https://pipecat.ai" target="_blank" rel="noopener" className="font-semibold text-gray-900 hover:text-gray-600">Pipecat</a> community
               </p>
             </div>
 
@@ -377,11 +377,11 @@ export default function Home() {
             <div className="text-center space-y-2">
               <p className="text-sm text-gray-500">
                 Data sourced from{' '}
-                <a href="https://github.com/pipecat-ai/stt-benchmark" className="font-medium text-blue-600 hover:text-blue-700 underline underline-offset-2" target="_blank" rel="noopener">
+                <a href="https://github.com/pipecat-ai/stt-benchmark" className="font-medium text-gray-900 hover:text-gray-600 underline underline-offset-2" target="_blank" rel="noopener">
                   pipecat-ai/stt-benchmark
                 </a>
                 {' '}and{' '}
-                <a href="https://github.com/kwindla/aiewf-eval" className="font-medium text-blue-600 hover:text-blue-700 underline underline-offset-2" target="_blank" rel="noopener">
+                <a href="https://github.com/kwindla/aiewf-eval" className="font-medium text-gray-900 hover:text-gray-600 underline underline-offset-2" target="_blank" rel="noopener">
                   kwindla/aiewf-eval
                 </a>
               </p>
