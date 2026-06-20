@@ -330,7 +330,7 @@ export default function Home() {
             {tab === 'llm' && (
               <div className="space-y-6">
                 <p className="text-sm text-gray-500 leading-relaxed">
-                  Enterprise voice agents need fast responses, accurate tool calling, and consistent instruction following 
+                  Voice agents need fast responses, accurate tool calling, and consistent instruction following 
                   over long conversations. This benchmark tests 30-turn conversations with complex tool use and knowledge grounding. 
                   Target: &lt;700ms TTFT for natural conversation flow.{' '}
                   <a href="https://www.daily.co/blog/benchmarking-llms-for-voice-agent-use-cases/" target="_blank" rel="noopener" className="underline underline-offset-2 text-gray-700 hover:text-gray-900">Read the methodology →</a>
