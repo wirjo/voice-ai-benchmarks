@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
+  <text x="0" y="36" font-family="'Amazon Ember', 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="700" fill="#232F3E">aws</text>
+  <path d="M55 38c-12 8-28 12-42 12-20 0-38-7-51-19-1-1 0-2 1-1.5 14.5 8.5 32.5 13.5 51 13.5 12.5 0 26.5-2.5 39-8 2-.8 3.5 1.2 2 2.5z" fill="#FF9900" transform="translate(50, 0) scale(0.6)"/>
+  <path d="M59 35c-1.5-2-10-1-14-.5-1.2.2-1.4-.8-.3-1.5 6.7-4.7 17.7-3.3 19-1.8 1.2 1.6-.4 12.7-6.6 18-.9.8-1.8.4-1.4-.7 1.4-3.5 4.5-11.7 3.3-13.7z" fill="#FF9900" transform="translate(50, 0) scale(0.6)"/>
+</svg>
