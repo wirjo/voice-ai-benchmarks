@@ -1,0 +1,35 @@
+[
+  {
+    "model": "nemotron-3-ultra (128)",
+    "pass_rate": "100.0%",
+    "turn_pass": "300/300",
+    "tool_use": "300/300",
+    "instruction": "300/300",
+    "kb_ground": "300/300",
+    "ttft_med": "541ms",
+    "ttft_p95": "712ms",
+    "ttft_max": "1302ms"
+  },
+  {
+    "model": "claude-sonnet-4-6",
+    "pass_rate": "100.0%",
+    "turn_pass": "300/300",
+    "tool_use": "300/300",
+    "instruction": "300/300",
+    "kb_ground": "300/300",
+    "ttft_med": "850ms",
+    "ttft_p95": "4126ms",
+    "ttft_max": "9396ms"
+  },
+  {
+    "model": "gpt-5.1",
+    "pass_rate": "98.0%",
+    "turn_pass": "294/300",
+    "tool_use": "294/300",
+    "instruction": "294/300",
+    "kb_ground": "300/300",
+    "ttft_med": "739ms",
+    "ttft_p95": "1492ms",
+    "ttft_max": "4244ms"
+  }
+]
