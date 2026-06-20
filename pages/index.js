@@ -315,9 +315,10 @@ export default function Home() {
             {tab === 'stt' && (
               <div className="space-y-6">
                 <p className="text-sm text-gray-500 leading-relaxed">
-                  Benchmarked on 1,000 samples from pipecat-ai/smart-turn-data-v3.1-train. 
-                  Lower WER (Word Error Rate) and TTFS (Time To Final Segment) is better. 
-                  🏆 = Best in category.
+                  Voice agents need STT that's both fast and accurate. This benchmark measures what matters: 
+                  semantic accuracy (can the LLM understand the transcript?) and latency (how quickly is the transcript ready?). 
+                  Tested on 1,000 real-world samples.{' '}
+                  <a href="https://www.daily.co/blog/benchmarking-stt-for-voice-agents/" target="_blank" rel="noopener" className="underline underline-offset-2 text-gray-700 hover:text-gray-900">Read the methodology →</a>
                 </p>
                 <DataTable
                   columns={sttColumns}
@@ -330,9 +331,10 @@ export default function Home() {
             {tab === 'llm' && (
               <div className="space-y-6">
                 <p className="text-sm text-gray-500 leading-relaxed">
-                  Multi-turn conversation benchmark (aiwf_medium_context). 
-                  Higher pass rates indicate better conversation handling. Lower TTFT (Time To First Token) is faster. 
-                  🏆 = Best performer.
+                  Enterprise voice agents need fast responses, accurate tool calling, and consistent instruction following 
+                  over long conversations. This benchmark tests 30-turn conversations with complex tool use and knowledge grounding. 
+                  Target: &lt;700ms TTFT for natural conversation flow.{' '}
+                  <a href="https://www.daily.co/blog/benchmarking-llms-for-voice-agent-use-cases/" target="_blank" rel="noopener" className="underline underline-offset-2 text-gray-700 hover:text-gray-900">Read the methodology →</a>
                 </p>
                 <DataTable
                   columns={llmColumns}
