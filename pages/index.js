@@ -315,7 +315,7 @@ export default function Home() {
             {tab === 'stt' && (
               <div className="space-y-6">
                 <p className="text-sm text-gray-500 leading-relaxed">
-                  Voice agents need STT that's both fast and accurate. This benchmark measures what matters: 
+                  Voice agents need Speech-to-Text (STT) that's both fast and accurate. This benchmark measures what matters: 
                   semantic accuracy (can the LLM understand the transcript?) and latency (how quickly is the transcript ready?). 
                   Tested on 1,000 real-world samples.{' '}
                   <a href="https://www.daily.co/blog/benchmarking-stt-for-voice-agents/" target="_blank" rel="noopener" className="underline underline-offset-2 text-gray-700 hover:text-gray-900">Read the methodology →</a>
