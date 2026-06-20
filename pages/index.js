@@ -3,6 +3,54 @@ import Head from 'next/head';
 import sttData from '../data/stt.json';
 import llmData from '../data/llm.json';
 
+// Icon mapping for STT vendors
+const vendorIcons = {
+  'AssemblyAI': 'assemblyai',
+  'AWS': 'aws',
+  'Azure': 'azure',
+  'Cartesia': 'cartesia',
+  'Deepgram': 'deepgram',
+  'ElevenLabs': 'elevenlabs',
+  'Google': 'google',
+  'Gradium': 'gradium',
+  'Mistral': 'mistral',
+  'NVIDIA': 'nvidia',
+  'OpenAI': 'openai',
+  'Smallest AI': 'smallest',
+  'Soniox': 'soniox',
+  'Speechmatics': 'speechmatics',
+};
+
+// Icon mapping for LLM models (by prefix match)
+function getLLMIcon(model) {
+  const m = model.toLowerCase();
+  if (m.includes('nemotron') || m.includes('nvidia')) return 'nvidia';
+  if (m.includes('claude')) return 'anthropic';
+  if (m.includes('qwen')) return 'qwen';
+  if (m.includes('gemini')) return 'gemini';
+  if (m.includes('gemma')) return 'gemma';
+  if (m.includes('glm') || m.includes('zai-org')) return 'glm';
+  if (m.includes('kimi')) return 'kimi';
+  if (m.includes('gpt') || m.includes('openai')) return 'openai';
+  if (m.includes('nova')) return 'aws';
+  if (m.includes('groq') || m.includes('gpt-oss')) return 'groq';
+  if (m.includes('mistral')) return 'mistral';
+  return null;
+}
+
+function ProviderIcon({ name, type = 'stt' }) {
+  const iconName = type === 'stt' ? vendorIcons[name] : getLLMIcon(name);
+  if (!iconName) return null;
+  return (
+    <img
+      src={`/voice-ai-benchmarks/icons/${iconName}.png`}
+      alt={iconName}
+      className="w-5 h-5 rounded-sm object-contain inline-block"
+      onError={(e) => { e.target.style.display = 'none'; }}
+    />
+  );
+}
+
 function SortArrow({ direction }) {
   if (!direction) return <span className="text-gray-300 ml-1">↕</span>;
   return <span className="ml-1 text-blue-600">{direction === 'asc' ? '↑' : '↓'}</span>;
@@ -87,7 +135,23 @@ function DataTable({ columns, data, defaultSort, lowerIsBetter = [] }) {
     const value = row[col.key];
     if (value === null || value === undefined) return '—';
     
-    if (col.key === 'vendor' || col.key === 'model') {
+    if (col.key === 'vendor') {
+      return (
+        <span className="font-medium text-gray-900 inline-flex items-center gap-2">
+          <ProviderIcon name={value} type="stt" />
+          {value}
+        </span>
+      );
+    }
+    if (col.key === 'model' && col.hasIcon) {
+      return (
+        <span className="font-medium text-gray-900 inline-flex items-center gap-2">
+          <ProviderIcon name={value} type="llm" />
+          {value}
+        </span>
+      );
+    }
+    if (col.key === 'model') {
       return <span className="font-medium text-gray-900">{value}</span>;
     }
     
@@ -162,7 +226,7 @@ const sttColumns = [
 ];
 
 const llmColumns = [
-  { key: 'model', label: 'Model' },
+  { key: 'model', label: 'Model', hasIcon: true },
   { key: 'pass_rate', label: 'Pass Rate' },
   { key: 'turn_pass', label: 'Turn Pass' },
   { key: 'tool_use', label: 'Tool Use' },
