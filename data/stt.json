@@ -11,6 +11,61 @@
     "ttfs_p99": "613ms"
   },
   {
+    "vendor": "AssemblyAI",
+    "model": "universal-streaming-english",
+    "transcripts": "99.8%",
+    "perfect": "66.8%",
+    "wer_mean": "3.49%",
+    "pooled_wer": "3.02%",
+    "ttfs_median": "256ms",
+    "ttfs_p95": "362ms",
+    "ttfs_p99": "417ms"
+  },
+  {
+    "vendor": "AWS",
+    "model": "N/A",
+    "transcripts": "100.0%",
+    "perfect": "77.4%",
+    "wer_mean": "1.68%",
+    "pooled_wer": "1.75%",
+    "ttfs_median": "1136ms",
+    "ttfs_p95": "1527ms",
+    "ttfs_p99": "1897ms"
+  },
+  {
+    "vendor": "Azure",
+    "model": "N/A",
+    "transcripts": "100.0%",
+    "perfect": "82.9%",
+    "wer_mean": "1.21%",
+    "pooled_wer": "1.18%",
+    "ttfs_median": "1016ms",
+    "ttfs_p95": "1345ms",
+    "ttfs_p99": "1791ms"
+  },
+  {
+    "vendor": "Cartesia",
+    "model": "ink-2",
+    "transcripts": "100.0%",
+    "perfect": "84.2%",
+    "wer_mean": "1.47%",
+    "pooled_wer": "1.25%",
+    "ttfs_median": "299ms",
+    "ttfs_p95": "328ms",
+    "ttfs_p99": "1584ms"
+  },
+  {
+    "vendor": "Cartesia",
+    "model": "ink-whisper",
+    "transcripts": "99.9%",
+    "perfect": "60.5%",
+    "wer_mean": "3.92%",
+    "pooled_wer": "4.36%",
+    "ttfs_median": "266ms",
+    "ttfs_p95": "364ms",
+    "ttfs_p99": "898ms"
+  },
+  {
     "vendor": "Deepgram",
     "model": "nova-3-general",
     "transcripts": "99.8%",
@@ -22,6 +77,50 @@
     "ttfs_p99": "326ms"
   },
   {
+    "vendor": "ElevenLabs",
+    "model": "scribe_v2_realtime",
+    "transcripts": "99.7%",
+    "perfect": "81.3%",
+    "wer_mean": "3.16%",
+    "pooled_wer": "3.12%",
+    "ttfs_median": "281ms",
+    "ttfs_p95": "348ms",
+    "ttfs_p99": "407ms"
+  },
+  {
+    "vendor": "Google",
+    "model": "latest-long",
+    "transcripts": "100.0%",
+    "perfect": "69.0%",
+    "wer_mean": "2.84%",
+    "pooled_wer": "2.85%",
+    "ttfs_median": "878ms",
+    "ttfs_p95": "1155ms",
+    "ttfs_p99": "1570ms"
+  },
+  {
+    "vendor": "Gradium",
+    "model": "default",
+    "transcripts": "99.8%",
+    "perfect": "65.1%",
+    "wer_mean": "3.56%",
+    "pooled_wer": "3.71%",
+    "ttfs_median": "570ms",
+    "ttfs_p95": "596ms",
+    "ttfs_p99": "622ms"
+  },
+  {
+    "vendor": "Mistral",
+    "model": "voxtral-mini-transcribe-realtime-2602",
+    "transcripts": "99.3%",
+    "perfect": "68.8%",
+    "wer_mean": "4.44%",
+    "pooled_wer": "4.97%",
+    "ttfs_median": "525ms",
+    "ttfs_p95": "973ms",
+    "ttfs_p99": "1913ms"
+  },
+  {
     "vendor": "NVIDIA",
     "model": "Nemotron 3.0 ASR (en)",
     "transcripts": "100.0%",
@@ -31,5 +130,60 @@
     "ttfs_median": "221ms",
     "ttfs_p95": "238ms",
     "ttfs_p99": "252ms"
+  },
+  {
+    "vendor": "NVIDIA",
+    "model": "Nemotron 3.5 ASR (multilingual)",
+    "transcripts": "99.6%",
+    "perfect": "62.0%",
+    "wer_mean": "4.54%",
+    "pooled_wer": "4.58%",
+    "ttfs_median": "236ms",
+    "ttfs_p95": "253ms",
+    "ttfs_p99": "266ms"
+  },
+  {
+    "vendor": "OpenAI",
+    "model": "gpt-4o-transcribe",
+    "transcripts": "99.3%",
+    "perfect": "75.9%",
+    "wer_mean": "3.24%",
+    "pooled_wer": "3.06%",
+    "ttfs_median": "637ms",
+    "ttfs_p95": "965ms",
+    "ttfs_p99": "1655ms"
+  },
+  {
+    "vendor": "Smallest AI",
+    "model": "pulse",
+    "transcripts": "100.0%",
+    "perfect": "72.4%",
+    "wer_mean": "2.30%",
+    "pooled_wer": "2.37%",
+    "ttfs_median": "398ms",
+    "ttfs_p95": "533ms",
+    "ttfs_p99": "1593ms"
+  },
+  {
+    "vendor": "Soniox",
+    "model": "stt-rt-v4",
+    "transcripts": "99.8%",
+    "perfect": "84.1%",
+    "wer_mean": "1.25%",
+    "pooled_wer": "1.29%",
+    "ttfs_median": "249ms",
+    "ttfs_p95": "281ms",
+    "ttfs_p99": "310ms"
+  },
+  {
+    "vendor": "Speechmatics",
+    "model": "N/A",
+    "transcripts": "99.7%",
+    "perfect": "83.2%",
+    "wer_mean": "1.40%",
+    "pooled_wer": "1.07%",
+    "ttfs_median": "495ms",
+    "ttfs_p95": "676ms",
+    "ttfs_p99": "736ms"
   }
 ]

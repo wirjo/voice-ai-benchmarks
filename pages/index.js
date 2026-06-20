@@ -16,6 +16,24 @@ function parseNumeric(val) {
   return parseFloat(s);
 }
 
+function PerformanceBadge({ value, isBest, isGood }) {
+  if (isBest) {
+    return (
+      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+        🏆 {value}
+      </span>
+    );
+  }
+  if (isGood) {
+    return (
+      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+        {value}
+      </span>
+    );
+  }
+  return value;
+}
+
 function DataTable({ columns, data, defaultSort, lowerIsBetter = [] }) {
   const [sortCol, setSortCol] = useState(defaultSort || columns[0].key);
   const [sortDir, setSortDir] = useState('asc');
@@ -43,53 +61,71 @@ function DataTable({ columns, data, defaultSort, lowerIsBetter = [] }) {
     }
   }
 
-  const bestValues = useMemo(() => {
+  const { bestValues, topTier } = useMemo(() => {
     const bests = {};
+    const tops = {};
+    
     columns.forEach(col => {
       if (col.key === 'vendor' || col.key === 'model') return;
       const values = data.map(r => parseNumeric(r[col.key])).filter(v => v !== null);
       if (values.length === 0) return;
+      
       const isLower = lowerIsBetter.includes(col.key);
-      bests[col.key] = isLower ? Math.min(...values) : Math.max(...values);
+      const sortedVals = [...values].sort((a, b) => a - b);
+      
+      bests[col.key] = isLower ? sortedVals[0] : sortedVals[sortedVals.length - 1];
+      
+      // Top 20% are "good"
+      const topIndex = Math.ceil(sortedVals.length * 0.2);
+      tops[col.key] = isLower 
+        ? sortedVals[topIndex - 1] 
+        : sortedVals[sortedVals.length - topIndex];
     });
-    return bests;
+    return { bestValues: bests, topTier: tops };
   }, [data, columns, lowerIsBetter]);
 
-  function getCellClass(key, value) {
+  function getCellContent(col, row) {
+    const value = row[col.key];
+    if (value === null || value === undefined) return '—';
+    
+    if (col.key === 'vendor' || col.key === 'model') return value;
+    
     const numVal = parseNumeric(value);
-    if (numVal === null) return '';
-    if (bestValues[key] !== undefined && numVal === bestValues[key]) {
-      return 'bg-green-50 text-green-800 font-semibold';
-    }
-    return '';
+    if (numVal === null) return value;
+    
+    const isBest = bestValues[col.key] !== undefined && numVal === bestValues[col.key];
+    const isGood = !isBest && topTier[col.key] !== undefined && (
+      lowerIsBetter.includes(col.key) ? numVal <= topTier[col.key] : numVal >= topTier[col.key]
+    );
+    
+    return <PerformanceBadge value={value} isBest={isBest} isGood={isGood} />;
   }
 
   return (
-    <div className="overflow-x-auto">
-      <table className="w-full text-sm border-collapse">
-        <thead>
-          <tr className="border-b-2 border-gray-200">
+    <div className="overflow-x-auto border border-gray-200 rounded-lg shadow-sm">
+      <table className="w-full text-sm border-collapse bg-white">
+        <thead className="bg-gray-50">
+          <tr>
             {columns.map(col => (
               <th
                 key={col.key}
                 onClick={() => handleSort(col.key)}
-                className="px-3 py-3 text-left cursor-pointer hover:bg-gray-50 select-none whitespace-nowrap"
+                className="px-4 py-3 text-left cursor-pointer hover:bg-gray-100 select-none whitespace-nowrap font-medium text-gray-900 border-b border-gray-200"
               >
-                {col.label}
-                <SortArrow direction={sortCol === col.key ? sortDir : null} />
+                <div className="flex items-center">
+                  {col.label}
+                  <SortArrow direction={sortCol === col.key ? sortDir : null} />
+                </div>
               </th>
             ))}
           </tr>
         </thead>
-        <tbody>
+        <tbody className="divide-y divide-gray-200">
           {sorted.map((row, i) => (
-            <tr key={i} className="border-b border-gray-100 hover:bg-gray-50">
+            <tr key={i} className="hover:bg-gray-50 transition-colors">
               {columns.map(col => (
-                <td
-                  key={col.key}
-                  className={`px-3 py-2.5 whitespace-nowrap ${getCellClass(col.key, row[col.key])}`}
-                >
-                  {row[col.key] ?? '—'}
+                <td key={col.key} className="px-4 py-3 whitespace-nowrap">
+                  {getCellContent(col, row)}
                 </td>
               ))}
             </tr>
@@ -135,52 +171,71 @@ export default function Home() {
       <Head>
         <title>Voice AI Benchmarks</title>
         <meta name="description" content="Compare STT and LLM providers for voice agents" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="min-h-screen flex flex-col bg-white">
+      <div className="min-h-screen flex flex-col bg-gray-50">
         {/* Header */}
-        <header className="border-b border-gray-200 px-6 py-8">
+        <header className="bg-white border-b border-gray-200 px-6 py-8">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900">Voice AI Benchmarks</h1>
-            <p className="mt-2 text-gray-600">Compare STT and LLM providers for voice agents</p>
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900">Voice AI Benchmarks</h1>
+            <p className="mt-2 text-lg text-gray-600">Compare STT and LLM providers for voice agents</p>
+            <div className="mt-4 flex items-center gap-4 text-sm text-gray-500">
+              <span className="inline-flex items-center gap-1">
+                <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                Live data from upstream repos
+              </span>
+              <span>•</span>
+              <span>Updated daily</span>
+              <span>•</span>
+              <span>{sttData.length} STT providers</span>
+              <span>•</span>
+              <span>{llmData.length} LLM models</span>
+            </div>
           </div>
         </header>
 
         {/* Tabs */}
-        <div className="border-b border-gray-200 px-6">
-          <div className="max-w-7xl mx-auto flex gap-0">
-            <button
-              onClick={() => setTab('stt')}
-              className={`px-5 py-3 text-sm font-medium border-b-2 transition-colors ${
-                tab === 'stt'
-                  ? 'border-gray-900 text-gray-900'
-                  : 'border-transparent text-gray-500 hover:text-gray-700'
-              }`}
-            >
-              STT Benchmarks
-            </button>
-            <button
-              onClick={() => setTab('llm')}
-              className={`px-5 py-3 text-sm font-medium border-b-2 transition-colors ${
-                tab === 'llm'
-                  ? 'border-gray-900 text-gray-900'
-                  : 'border-transparent text-gray-500 hover:text-gray-700'
-              }`}
-            >
-              LLM for Voice Agents
-            </button>
+        <div className="bg-white border-b border-gray-200 px-6">
+          <div className="max-w-7xl mx-auto">
+            <nav className="-mb-px flex gap-0">
+              <button
+                onClick={() => setTab('stt')}
+                className={`px-6 py-4 text-sm font-medium border-b-2 transition-all duration-200 ${
+                  tab === 'stt'
+                    ? 'border-blue-500 text-blue-600'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                }`}
+              >
+                🎤 STT Benchmarks
+              </button>
+              <button
+                onClick={() => setTab('llm')}
+                className={`px-6 py-4 text-sm font-medium border-b-2 transition-all duration-200 ${
+                  tab === 'llm'
+                    ? 'border-blue-500 text-blue-600'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                }`}
+              >
+                🧠 LLM for Voice Agents
+              </button>
+            </nav>
           </div>
         </div>
 
         {/* Content */}
-        <main className="flex-1 px-6 py-6">
+        <main className="flex-1 px-6 py-8">
           <div className="max-w-7xl mx-auto">
             {tab === 'stt' && (
-              <div>
-                <p className="text-sm text-gray-500 mb-4">
-                  Speech-to-Text benchmarks. Lower WER and TTFS is better. Best values highlighted in green.
-                </p>
+              <div className="space-y-6">
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                  <p className="text-sm text-blue-800">
+                    <strong>STT Performance:</strong> Benchmarked on 1,000 samples from pipecat-ai/smart-turn-data-v3.1-train. 
+                    Lower WER (Word Error Rate) and TTFS (Time To Final Segment) values indicate better performance. 
+                    🏆 = Best in category, badges highlight top 20% performers.
+                  </p>
+                </div>
                 <DataTable
                   columns={sttColumns}
                   data={sttData}
@@ -190,10 +245,14 @@ export default function Home() {
               </div>
             )}
             {tab === 'llm' && (
-              <div>
-                <p className="text-sm text-gray-500 mb-4">
-                  Multi-turn LLM evaluation for voice agents. Higher pass rate is better. Lower TTFT is better.
-                </p>
+              <div className="space-y-6">
+                <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                  <p className="text-sm text-purple-800">
+                    <strong>LLM Voice Agent Evaluation:</strong> Multi-turn conversation benchmark (aiwf_medium_context). 
+                    Higher pass rates indicate better conversation handling. Lower TTFT (Time To First Token) is faster response. 
+                    🏆 = Best performer, badges show top-tier models.
+                  </p>
+                </div>
                 <DataTable
                   columns={llmColumns}
                   data={llmData}
@@ -206,18 +265,38 @@ export default function Home() {
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-gray-200 px-6 py-6 mt-auto">
-          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-gray-500">
-              Data sourced from{' '}
-              <a href="https://github.com/pipecat-ai/stt-benchmark" className="underline hover:text-gray-700" target="_blank" rel="noopener">pipecat-ai/stt-benchmark</a>
-              {' '}and{' '}
-              <a href="https://github.com/kwindla/aiewf-eval" className="underline hover:text-gray-700" target="_blank" rel="noopener">kwindla/aiewf-eval</a>
-              . Updated daily.
-            </p>
-            <div className="flex items-center gap-6 text-sm text-gray-600">
-              <span className="font-semibold">🦞 pipecat</span>
-              <span className="font-semibold">AWS</span>
+        <footer className="bg-white border-t border-gray-200 px-6 py-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="text-center md:text-left">
+                <p className="text-sm text-gray-600">
+                  Data sourced from{' '}
+                  <a href="https://github.com/pipecat-ai/stt-benchmark" className="font-medium text-blue-600 hover:text-blue-700 underline" target="_blank" rel="noopener">
+                    pipecat-ai/stt-benchmark
+                  </a>
+                  {' '}and{' '}
+                  <a href="https://github.com/kwindla/aiewf-eval" className="font-medium text-blue-600 hover:text-blue-700 underline" target="_blank" rel="noopener">
+                    kwindla/aiewf-eval
+                  </a>
+                </p>
+                <p className="text-xs text-gray-500 mt-1">
+                  Built for the Pipecat community • Updated daily via GitHub Actions
+                </p>
+              </div>
+              <div className="flex items-center gap-6">
+                <div className="text-center">
+                  <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-sm mb-1">
+                    P
+                  </div>
+                  <span className="text-xs text-gray-600">Pipecat</span>
+                </div>
+                <div className="text-center">
+                  <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center text-white font-bold text-sm mb-1">
+                    AWS
+                  </div>
+                  <span className="text-xs text-gray-600">Powered by</span>
+                </div>
+              </div>
             </div>
           </div>
         </footer>
