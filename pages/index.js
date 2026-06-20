@@ -271,12 +271,12 @@ export default function Home() {
           </div>
         </header>
 
-        {/* Stats Bar */}
-        <div className="bg-gray-50 border-b border-gray-200 px-6 py-5">
-          <div className="max-w-7xl mx-auto flex flex-wrap gap-3">
-            <StatCard icon="🔄" value="Updated Daily" label="From upstream repos" />
-            <StatCard icon="🎤" value={`${sttData.length} Providers`} label="STT Services" />
-            <StatCard icon="🧠" value={`${llmData.length} Models`} label="LLM Evaluation" />
+        {/* Stats - inline */}
+        <div className="bg-gray-50 border-b border-gray-200 px-6 py-3">
+          <div className="max-w-7xl mx-auto">
+            <p className="text-sm text-gray-500">
+              🔄 Updated daily • {sttData.length} STT providers • {llmData.length} LLM models
+            </p>
           </div>
         </div>
 
