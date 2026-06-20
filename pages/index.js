@@ -171,6 +171,9 @@ function DataTable({ columns, data, defaultSort, lowerIsBetter = [] }) {
       <table className="w-full text-sm border-collapse">
         <thead>
           <tr className="bg-gray-50/80">
+            <th className="px-3 py-3.5 text-center font-medium text-gray-600 text-xs uppercase tracking-wider border-b border-gray-200 w-10">
+              #
+            </th>
             {columns.map(col => (
               <th
                 key={col.key}
@@ -188,6 +191,9 @@ function DataTable({ columns, data, defaultSort, lowerIsBetter = [] }) {
         <tbody className="divide-y divide-gray-100">
           {sorted.map((row, i) => (
             <tr key={i} className="hover:bg-blue-50/30 transition-colors">
+              <td className="px-3 py-3 text-center text-xs font-medium text-gray-400 w-10">
+                {i + 1}
+              </td>
               {columns.map(col => (
                 <td key={col.key} className="px-4 py-3 whitespace-nowrap">
                   {getCellContent(col, row)}
