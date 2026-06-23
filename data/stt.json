@@ -166,6 +166,17 @@
   },
   {
     "vendor": "Soniox",
+    "model": "stt-rt-v5",
+    "transcripts": "99.8%",
+    "perfect": "83.3%",
+    "wer_mean": "1.34%",
+    "pooled_wer": "1.27%",
+    "ttfs_median": "260ms",
+    "ttfs_p95": "305ms",
+    "ttfs_p99": "313ms"
+  },
+  {
+    "vendor": "Soniox",
     "model": "stt-rt-v4",
     "transcripts": "99.8%",
     "perfect": "84.1%",
