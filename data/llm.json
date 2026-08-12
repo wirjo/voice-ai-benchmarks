@@ -55,28 +55,6 @@
     "ttft_max": ""
   },
   {
-    "model": "qwen3.5-27b (thinking)",
-    "pass_rate": "99.0%",
-    "turn_pass": "",
-    "tool_use": "",
-    "instruction": "",
-    "kb_ground": "",
-    "ttft_med": "",
-    "ttft_p95": "",
-    "ttft_max": ""
-  },
-  {
-    "model": "glm-5 (thinking)",
-    "pass_rate": "98.7%",
-    "turn_pass": "",
-    "tool_use": "",
-    "instruction": "",
-    "kb_ground": "",
-    "ttft_med": "",
-    "ttft_p95": "",
-    "ttft_max": ""
-  },
-  {
     "model": "nemotron-3-ultra (96)",
     "pass_rate": "98.3%",
     "turn_pass": "",
@@ -88,8 +66,8 @@
     "ttft_max": ""
   },
   {
-    "model": "kimi-k2.6 Cerebras (thinking)",
-    "pass_rate": "98.0%",
+    "model": "kimi-k2.6 (thinking on)",
+    "pass_rate": "98.3%",
     "turn_pass": "",
     "tool_use": "",
     "instruction": "",
@@ -132,17 +110,6 @@
     "ttft_max": ""
   },
   {
-    "model": "lilac/gemma-4-31b-it (thinking off)",
-    "pass_rate": "97.7%",
-    "turn_pass": "",
-    "tool_use": "",
-    "instruction": "",
-    "kb_ground": "",
-    "ttft_med": "",
-    "ttft_p95": "",
-    "ttft_max": ""
-  },
-  {
     "model": "gpt-5.5 (none)",
     "pass_rate": "97.4%",
     "turn_pass": "",
@@ -176,17 +143,6 @@
     "ttft_max": ""
   },
   {
-    "model": "gpt-5.4 (low)",
-    "pass_rate": "97.0%",
-    "turn_pass": "",
-    "tool_use": "",
-    "instruction": "",
-    "kb_ground": "",
-    "ttft_med": "",
-    "ttft_p95": "",
-    "ttft_max": ""
-  },
-  {
     "model": "nemotron-3-super-120b (512)",
     "pass_rate": "97.0%",
     "turn_pass": "",
@@ -198,8 +154,19 @@
     "ttft_max": ""
   },
   {
-    "model": "gemini-3.1-flash-lite-preview",
-    "pass_rate": "96.7%",
+    "model": "gpt-5.4 (low)",
+    "pass_rate": "97.0%",
+    "turn_pass": "",
+    "tool_use": "",
+    "instruction": "",
+    "kb_ground": "",
+    "ttft_med": "",
+    "ttft_p95": "",
+    "ttft_max": ""
+  },
+  {
+    "model": "gemma-4-31b-it (thinking off)",
+    "pass_rate": "96.6%",
     "turn_pass": "",
     "tool_use": "",
     "instruction": "",
@@ -231,30 +198,8 @@
     "ttft_max": ""
   },
   {
-    "model": "zai-org/glm-5.1",
-    "pass_rate": "95.7%",
-    "turn_pass": "",
-    "tool_use": "",
-    "instruction": "",
-    "kb_ground": "",
-    "ttft_med": "",
-    "ttft_p95": "",
-    "ttft_max": ""
-  },
-  {
     "model": "gpt-5.4 (none, +96 dots)",
     "pass_rate": "95.2%",
-    "turn_pass": "",
-    "tool_use": "",
-    "instruction": "",
-    "kb_ground": "",
-    "ttft_med": "",
-    "ttft_p95": "",
-    "ttft_max": ""
-  },
-  {
-    "model": "qwen3.5-4b (thinking)",
-    "pass_rate": "95.0%",
     "turn_pass": "",
     "tool_use": "",
     "instruction": "",
@@ -286,30 +231,8 @@
     "ttft_max": ""
   },
   {
-    "model": "qwen3.5-9b (thinking)",
-    "pass_rate": "94.7%",
-    "turn_pass": "",
-    "tool_use": "",
-    "instruction": "",
-    "kb_ground": "",
-    "ttft_med": "",
-    "ttft_p95": "",
-    "ttft_max": ""
-  },
-  {
-    "model": "qwen3.5-27b",
-    "pass_rate": "94.3%",
-    "turn_pass": "",
-    "tool_use": "",
-    "instruction": "",
-    "kb_ground": "",
-    "ttft_med": "",
-    "ttft_p95": "",
-    "ttft_max": ""
-  },
-  {
-    "model": "kimi-k2.6 Cerebras (instant)",
-    "pass_rate": "94.0%",
+    "model": "kimi-k2.6 (thinking off)",
+    "pass_rate": "93.9%",
     "turn_pass": "",
     "tool_use": "",
     "instruction": "",
@@ -363,30 +286,8 @@
     "ttft_max": ""
   },
   {
-    "model": "gpt-5.4-mini (medium)",
-    "pass_rate": "91.1%",
-    "turn_pass": "",
-    "tool_use": "",
-    "instruction": "",
-    "kb_ground": "",
-    "ttft_med": "",
-    "ttft_p95": "",
-    "ttft_max": ""
-  },
-  {
     "model": "nemotron-3-nano-30b (512)",
     "pass_rate": "90.6%",
-    "turn_pass": "",
-    "tool_use": "",
-    "instruction": "",
-    "kb_ground": "",
-    "ttft_med": "",
-    "ttft_p95": "",
-    "ttft_max": ""
-  },
-  {
-    "model": "nova-2-pro-preview",
-    "pass_rate": "90.3%",
     "turn_pass": "",
     "tool_use": "",
     "instruction": "",
@@ -418,30 +319,8 @@
     "ttft_max": ""
   },
   {
-    "model": "qwen3.5-9b",
-    "pass_rate": "89.3%",
-    "turn_pass": "",
-    "tool_use": "",
-    "instruction": "",
-    "kb_ground": "",
-    "ttft_med": "",
-    "ttft_p95": "",
-    "ttft_max": ""
-  },
-  {
     "model": "gpt-5.2",
     "pass_rate": "89.3%",
-    "turn_pass": "",
-    "tool_use": "",
-    "instruction": "",
-    "kb_ground": "",
-    "ttft_med": "",
-    "ttft_p95": "",
-    "ttft_max": ""
-  },
-  {
-    "model": "qwen3.5-4b",
-    "pass_rate": "88.7%",
     "turn_pass": "",
     "tool_use": "",
     "instruction": "",
@@ -473,6 +352,17 @@
     "ttft_max": ""
   },
   {
+    "model": "muse-glimmer-30b (thinking low, GGUF)",
+    "pass_rate": "86.1%",
+    "turn_pass": "",
+    "tool_use": "",
+    "instruction": "",
+    "kb_ground": "",
+    "ttft_med": "",
+    "ttft_p95": "",
+    "ttft_max": ""
+  },
+  {
     "model": "poolside/laguna-s-2.1 (thinking off)",
     "pass_rate": "85.6%",
     "turn_pass": "",
@@ -495,30 +385,8 @@
     "ttft_max": ""
   },
   {
-    "model": "glm-4.7-flash",
-    "pass_rate": "84.7%",
-    "turn_pass": "",
-    "tool_use": "",
-    "instruction": "",
-    "kb_ground": "",
-    "ttft_med": "",
-    "ttft_p95": "",
-    "ttft_max": ""
-  },
-  {
     "model": "gpt-5-mini",
     "pass_rate": "83.7%",
-    "turn_pass": "",
-    "tool_use": "",
-    "instruction": "",
-    "kb_ground": "",
-    "ttft_med": "",
-    "ttft_p95": "",
-    "ttft_max": ""
-  },
-  {
-    "model": "gpt-5.4-mini (none)",
-    "pass_rate": "83.1%",
     "turn_pass": "",
     "tool_use": "",
     "instruction": "",
@@ -539,17 +407,6 @@
     "ttft_max": ""
   },
   {
-    "model": "qwen3-8b (thinking off, BaseTen)",
-    "pass_rate": "81.3%",
-    "turn_pass": "",
-    "tool_use": "",
-    "instruction": "",
-    "kb_ground": "",
-    "ttft_med": "",
-    "ttft_p95": "",
-    "ttft_max": ""
-  },
-  {
     "model": "gemma-4-26b-a4b-it (thinking off)",
     "pass_rate": "80.7%",
     "turn_pass": "",
@@ -561,30 +418,8 @@
     "ttft_max": ""
   },
   {
-    "model": "inkling-small (none)",
-    "pass_rate": "75.1%",
-    "turn_pass": "",
-    "tool_use": "",
-    "instruction": "",
-    "kb_ground": "",
-    "ttft_med": "",
-    "ttft_p95": "",
-    "ttft_max": ""
-  },
-  {
     "model": "gemini-3.5-flash-lite (minimal)",
     "pass_rate": "68.6%",
-    "turn_pass": "",
-    "tool_use": "",
-    "instruction": "",
-    "kb_ground": "",
-    "ttft_med": "",
-    "ttft_p95": "",
-    "ttft_max": ""
-  },
-  {
-    "model": "inkling-small (low)",
-    "pass_rate": "51.7%",
     "turn_pass": "",
     "tool_use": "",
     "instruction": "",
