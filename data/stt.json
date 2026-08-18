@@ -165,6 +165,17 @@
     "ttfs_p99": "1655ms"
   },
   {
+    "vendor": "OpenAI",
+    "model": "gpt-realtime-whisper",
+    "transcripts": "100.0%",
+    "perfect": "72.5%",
+    "wer_mean": "2.92%",
+    "pooled_wer": "2.73%",
+    "ttfs_median": "740ms",
+    "ttfs_p95": "878ms",
+    "ttfs_p99": "1080ms"
+  },
+  {
     "vendor": "Smallest AI",
     "model": "pulse",
     "transcripts": "100.0%",
