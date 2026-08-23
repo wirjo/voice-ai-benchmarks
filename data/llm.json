@@ -55,6 +55,17 @@
     "ttft_max": ""
   },
   {
+    "model": "glm-5.3 (low reasoning)",
+    "pass_rate": "98.7%",
+    "turn_pass": "",
+    "tool_use": "",
+    "instruction": "",
+    "kb_ground": "",
+    "ttft_med": "",
+    "ttft_p95": "",
+    "ttft_max": ""
+  },
+  {
     "model": "nemotron-3-ultra (96)",
     "pass_rate": "98.3%",
     "turn_pass": "",
