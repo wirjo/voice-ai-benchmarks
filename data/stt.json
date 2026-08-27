@@ -100,6 +100,17 @@
   },
   {
     "vendor": "Google",
+    "model": "gemini-3.5-transcribe-live",
+    "transcripts": "99.9%",
+    "perfect": "78.0%",
+    "wer_mean": "2.24%",
+    "pooled_wer": "2.24%",
+    "ttfs_median": "458ms",
+    "ttfs_p95": "532ms",
+    "ttfs_p99": "599ms"
+  },
+  {
+    "vendor": "Google",
     "model": "latest-long",
     "transcripts": "100.0%",
     "perfect": "69.0%",
