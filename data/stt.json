@@ -232,6 +232,17 @@
   },
   {
     "vendor": "Speechmatics",
+    "model": "linden-1",
+    "transcripts": "99.5%",
+    "perfect": "84.5%",
+    "wer_mean": "1.21%",
+    "pooled_wer": "1.05%",
+    "ttfs_median": "369ms",
+    "ttfs_p95": "438ms",
+    "ttfs_p99": "690ms"
+  },
+  {
+    "vendor": "Speechmatics",
     "model": "N/A",
     "transcripts": "99.7%",
     "perfect": "83.2%",
