@@ -1,14 +1,14 @@
 [
   {
     "vendor": "AssemblyAI",
-    "model": "universal-3-5-pro",
+    "model": "universal-3-6-pro",
     "transcripts": "99.9%",
-    "perfect": "84.7%",
-    "wer_mean": "1.44%",
-    "pooled_wer": "1.22%",
-    "ttfs_median": "282ms",
-    "ttfs_p95": "354ms",
-    "ttfs_p99": "393ms"
+    "perfect": "87.0%",
+    "wer_mean": "1.06%",
+    "pooled_wer": "0.96%",
+    "ttfs_median": "307ms",
+    "ttfs_p95": "401ms",
+    "ttfs_p99": "498ms"
   },
   {
     "vendor": "AssemblyAI",
@@ -20,6 +20,17 @@
     "ttfs_median": "335ms",
     "ttfs_p95": "534ms",
     "ttfs_p99": "613ms"
+  },
+  {
+    "vendor": "AssemblyAI",
+    "model": "universal-3-5-pro",
+    "transcripts": "99.9%",
+    "perfect": "84.7%",
+    "wer_mean": "1.44%",
+    "pooled_wer": "1.22%",
+    "ttfs_median": "282ms",
+    "ttfs_p95": "354ms",
+    "ttfs_p99": "393ms"
   },
   {
     "vendor": "AssemblyAI",
