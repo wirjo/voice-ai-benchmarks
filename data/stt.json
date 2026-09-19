@@ -12,17 +12,6 @@
   },
   {
     "vendor": "AssemblyAI",
-    "model": "u3-rt-pro",
-    "transcripts": "99.8%",
-    "perfect": "83.9%",
-    "wer_mean": "1.74%",
-    "pooled_wer": "1.34%",
-    "ttfs_median": "335ms",
-    "ttfs_p95": "534ms",
-    "ttfs_p99": "613ms"
-  },
-  {
-    "vendor": "AssemblyAI",
     "model": "universal-3-5-pro",
     "transcripts": "99.9%",
     "perfect": "84.7%",
