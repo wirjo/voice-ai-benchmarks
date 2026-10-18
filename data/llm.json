@@ -11,6 +11,17 @@
     "ttft_max": ""
   },
   {
+    "model": "gemini-3.7-flash (low)",
+    "pass_rate": "100.0%",
+    "turn_pass": "",
+    "tool_use": "",
+    "instruction": "",
+    "kb_ground": "",
+    "ttft_med": "",
+    "ttft_p95": "",
+    "ttft_max": ""
+  },
+  {
     "model": "claude-sonnet-4-6",
     "pass_rate": "100.0%",
     "turn_pass": "",
@@ -475,6 +486,17 @@
   {
     "model": "gpt-4o-mini",
     "pass_rate": "82.7%",
+    "turn_pass": "",
+    "tool_use": "",
+    "instruction": "",
+    "kb_ground": "",
+    "ttft_med": "",
+    "ttft_p95": "",
+    "ttft_max": ""
+  },
+  {
+    "model": "grok-4.6 (low)",
+    "pass_rate": "82.2%",
     "turn_pass": "",
     "tool_use": "",
     "instruction": "",
