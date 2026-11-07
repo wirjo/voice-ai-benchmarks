@@ -210,14 +210,14 @@
   },
   {
     "vendor": "Soniox",
-    "model": "stt-rt-v5",
-    "transcripts": "99.8%",
-    "perfect": "83.6%",
-    "wer_mean": "1.11%",
-    "pooled_wer": "1.09%",
-    "ttfs_median": "260ms",
-    "ttfs_p95": "305ms",
-    "ttfs_p99": "313ms"
+    "model": "stt-rt-v6",
+    "transcripts": "99.9%",
+    "perfect": "88.8%",
+    "wer_mean": "0.74%",
+    "pooled_wer": "0.71%",
+    "ttfs_median": "266ms",
+    "ttfs_p95": "324ms",
+    "ttfs_p99": "343ms"
   },
   {
     "vendor": "Soniox",
@@ -229,6 +229,17 @@
     "ttfs_median": "249ms",
     "ttfs_p95": "281ms",
     "ttfs_p99": "310ms"
+  },
+  {
+    "vendor": "Soniox",
+    "model": "stt-rt-v5",
+    "transcripts": "99.8%",
+    "perfect": "83.6%",
+    "wer_mean": "1.11%",
+    "pooled_wer": "1.09%",
+    "ttfs_median": "260ms",
+    "ttfs_p95": "305ms",
+    "ttfs_p99": "313ms"
   },
   {
     "vendor": "Speechmatics",
