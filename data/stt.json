@@ -1,14 +1,14 @@
 [
   {
     "vendor": "AssemblyAI",
-    "model": "universal-3-6-pro",
+    "model": "assemblyai-stt-3-7-realtime-agent",
     "transcripts": "99.9%",
-    "perfect": "88.7%",
-    "wer_mean": "0.89%",
-    "pooled_wer": "0.80%",
-    "ttfs_median": "307ms",
-    "ttfs_p95": "401ms",
-    "ttfs_p99": "498ms"
+    "perfect": "91.4%",
+    "wer_mean": "0.61%",
+    "pooled_wer": "0.52%",
+    "ttfs_median": "260ms",
+    "ttfs_p95": "299ms",
+    "ttfs_p99": "321ms"
   },
   {
     "vendor": "AssemblyAI",
@@ -20,6 +20,17 @@
     "ttfs_median": "282ms",
     "ttfs_p95": "354ms",
     "ttfs_p99": "393ms"
+  },
+  {
+    "vendor": "AssemblyAI",
+    "model": "universal-3-6-pro",
+    "transcripts": "99.9%",
+    "perfect": "88.7%",
+    "wer_mean": "0.89%",
+    "pooled_wer": "0.80%",
+    "ttfs_median": "307ms",
+    "ttfs_p95": "401ms",
+    "ttfs_p99": "498ms"
   },
   {
     "vendor": "AssemblyAI",
@@ -198,6 +209,17 @@
     "ttfs_p99": "1080ms"
   },
   {
+    "vendor": "Rime",
+    "model": "N/A",
+    "transcripts": "100.0%",
+    "perfect": "82.5%",
+    "wer_mean": "1.25%",
+    "pooled_wer": "1.21%",
+    "ttfs_median": "323ms",
+    "ttfs_p95": "381ms",
+    "ttfs_p99": "415ms"
+  },
+  {
     "vendor": "Smallest AI",
     "model": "pulse",
     "transcripts": "100.0%",
@@ -273,5 +295,38 @@
     "ttfs_median": "1322ms",
     "ttfs_p95": "1895ms",
     "ttfs_p99": "2148ms"
+  },
+  {
+    "vendor": "Zoom",
+    "model": "zoom-scribe-en",
+    "transcripts": "99.4%",
+    "perfect": "91.1%",
+    "wer_mean": "0.65%",
+    "pooled_wer": "0.56%",
+    "ttfs_median": "268ms",
+    "ttfs_p95": "368ms",
+    "ttfs_p99": "414ms"
+  },
+  {
+    "vendor": "Zoom",
+    "model": "zoom-scribe-en-pro",
+    "transcripts": "100.0%",
+    "perfect": "93.5%",
+    "wer_mean": "0.54%",
+    "pooled_wer": "0.41%",
+    "ttfs_median": "362ms",
+    "ttfs_p95": "572ms",
+    "ttfs_p99": "655ms"
+  },
+  {
+    "vendor": "Zoom",
+    "model": "zoom-scribe-multilingual",
+    "transcripts": "99.5%",
+    "perfect": "90.2%",
+    "wer_mean": "0.74%",
+    "pooled_wer": "0.69%",
+    "ttfs_median": "350ms",
+    "ttfs_p95": "526ms",
+    "ttfs_p99": "631ms"
   }
 ]
